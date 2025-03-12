@@ -85,9 +85,7 @@ mongoose.connection.on("connected", () => {
 
 // CORS middleware with more secure configuration
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://impexinfo.com', 'https://www.impexinfo.com'] // Production domains
-    : true, // Allow all origins in development
+  origin: true, // Allow requests from any origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
